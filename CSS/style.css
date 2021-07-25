@@ -1,0 +1,177 @@
+/* when screen is biggerr then 1000 */
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-rows: 1fr 4fr 4fr;
+  grid-template-areas:
+    "nav nav nav sidebar-right"
+    "sidebar-left content-left content-right sidebar-right"
+    "sidebar-left content-left content-right sidebar-right";
+}
+
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* --- --- --- --- -- Global styles --- --- --- --- -- */
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+h2 {
+  margin: 0;
+}
+/* --- --- X --- X -- Global styles --- --- X --- X -- */
+/* --- --- --- --- -- Navigation --- --- --- --- -- */
+
+.nav {
+  grid-area: nav;
+  min-height: 10vh;
+  height: 0;
+  overflow: hidden;
+  padding: 0rem 1rem;
+  transition: height 1s ease-in-out;
+}
+
+.nav .nav-menu {
+  justify-content: space-between;
+  position: relative;
+}
+
+.nav .nav-brand a {
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 1.4rem 0;
+  display: block;
+  font-family: "Flamenco", cursive;
+  color: #551a8b;
+}
+
+.nav .nav-items {
+  margin: 0;
+  display: flex;
+  padding: 0;
+}
+
+/* Why relative? */
+.nav .nav-items .nav-link {
+  padding: 1.9rem 1rem;
+  font-size: 1.1rem;
+  position: relative;
+  font-family: "Flamenco", cursive;
+  font-weight: bold;
+  text-align: center;
+}
+
+.nav .nav-items .nav-link a {
+  color: #551a8b;
+}
+.nav .nav-items .nav-link a:hover {
+  color: #ffdf00;
+}
+.nav .social {
+  padding: 1.6rem 0rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.nav .social a {
+  padding: 0 0.2rem;
+}
+
+.social a {
+  color: #ffdf00;
+  /* margin: 0 10px; doesnt work with w-900 margin */
+}
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.nav .toggle-collapse {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  cursor: pointer;
+  display: none;
+}
+
+.nav .toggle-collapse .toggle-icons {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.6rem 0rem;
+}
+
+.nav .toggle-collapse .toggle-icons i {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.collapse {
+  height: 30rem;
+}
+
+/* --- --- X --- X -- Navigation --- --- X --- X -- */
+
+#sidebar-left {
+  background-color: blueviolet;
+  grid-area: sidebar-left;
+}
+#content-left {
+  background-color: chocolate;
+  grid-area: content-left;
+}
+#content-right {
+  background-color: cyan;
+  grid-area: content-right;
+}
+#sidebar-right {
+  grid-area: sidebar-right;
+}
+
+/* Above 1000 */
+.social-1000 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.w-1000 {
+  font-size: 5rem;
+  margin: 2rem 0;
+  color: #ffdf00;
+}
+
+@media (max-width: 1000px) {
+  /* When screen is smaller then 1000 */
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr 4fr 4fr;
+    grid-template-areas:
+      "nav nav nav nav"
+      "sidebar-left content-left content-right content-right"
+      "sidebar-left content-left content-right content-right";
+  }
+
+  #sidebar-right {
+    display: none;
+  }
+}
