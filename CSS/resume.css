@@ -1,0 +1,23 @@
+.container {
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 4fr 4fr;
+  grid-template-areas:
+    "nav nav sidebar-right"
+    "sidebar-left content sidebar-right"
+    "sidebar-left content sidebar-right";
+}
+
+#content {
+  grid-area: content;
+  background-color: rgb(191, 84, 218);
+}
+
+@media (max-width: 1000px) {
+  /* When screen is smaller then 1000 */
+  .container {
+    grid-template-areas:
+      "nav nav nav"
+      "sidebar-left content content"
+      "sidebar-left content content";
+  }
+}

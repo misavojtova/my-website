@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work Portfolio</title>
+    <!-- font awsome -->
+    <script
+      src="https://kit.fontawesome.com/92e1d4c934.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Flamenco&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/CSS/nav.css" />
+    <link rel="stylesheet" href="/CSS/contact.css" />
+  </head>
+  <body>
+    <!--------------- Navigation bar -------------->
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-menu">
+          <div class="nav-brand">
+            <a href="#">MICHAELA VOJTOVA</a>
+          </div>
+
+          <ul class="nav-items">
+            <li class="nav-link">
+              <a href="/HTML/resume.html">Resume</a>
+            </li>
+
+            <li class="nav-link">
+              <a href="/HTML/portfolio.html">Work Portfolio</a>
+            </li>
+
+            <li class="nav-link">
+              <a href="/HTML/gallery.html">Personal Gallery</a>
+            </li>
+            <li class="nav-link">
+              <a href="/HTML/contact.html">Contact Me</a>
+            </li>
+
+            <li class="nav-link hide">
+              <a href="https://www.instagram.com/misavojtova/" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+
+              <a href="#">
+                <i class="fab fa-facebook"></i>
+              </a>
+
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+          </ul>
+
+          <button type="button" class="hamburger">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+      <!-------X--------Navigation bar -------X--------->
+
+      <div id="sidebar-left">sideleft</div>
+
+      <!---------------- Content left ------------------>
+
+      <div id="content-left">
+        <div class="profile">
+          <img src="/IMG/profile-2.jpg" alt="profile" />
+        </div>
+      </div>
+
+      <!-----X---------- Content left -------X---------->
+      <!---------------- Content right ------------------>
+      <div id="content-right">
+        <div class="box">
+          <form class="contact-form" action="mailto:misacastella@gmail.com">
+            <label for="fname">Full Name</label>
+            <input
+              type="text"
+              name="fullname"
+              id="fname"
+              placeholder="Full Name"
+            />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email" />
+            <label for="textarea">Message</label>
+            <textarea
+              name="textarea"
+              id="textarea"
+              cols="30"
+              rows="10"
+              placeholder="Let me know what you think."
+            ></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+      <!-----X---------- Content left -------X---------->
+
+      <div id="sidebar-right">
+        <div class="social-1000">
+          <a
+            class="w-1000"
+            href="https://www.instagram.com/misavojtova/"
+            target="_blank"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a class="w-1000" href="#">
+            <i class="fab fa-facebook"></i>
+          </a>
+
+          <a class="w-1000" href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="/JAVASCRIPT/script.js"></script>
+  </body>
+</html>

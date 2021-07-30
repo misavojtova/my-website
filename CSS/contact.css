@@ -1,0 +1,76 @@
+.container {
+  grid-template-columns: 1fr 1fr 2fr 1fr;
+  grid-template-rows: 1fr 4fr 4fr;
+  grid-template-areas:
+    "nav nav nav sidebar-right"
+    "sidebar-left content-left content-right sidebar-right"
+    "sidebar-left content-left content-right sidebar-right";
+}
+
+/* --- --- --- --- -- Content Left --- --- --- --- -- */
+#content-left {
+  background-color: yellow;
+  grid-area: content-left;
+}
+#content-right {
+  background-color: tomato;
+  grid-area: content-right;
+}
+/* --- --- --- --- -- Content Left --- --- --- --- -- */
+
+.profile {
+  /* height: 50vh; */
+  width: 20vw;
+}
+
+.profile img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* --- --- X --- X -- Content Left --- --- X --- X -- */
+/* --- --- --- --- -- Content Right --- --- --- --- -- */
+
+#content-right {
+  display: flex;
+  align-items: flex-end;
+}
+.box {
+  border: solid rgba(0, 0, 0, 0.658) 3px;
+
+  margin-bottom: 20px;
+}
+.contact-form {
+  /* display: inline-grid; */
+  font-family: "Flamenco", cursive;
+  /* width: 30vw; */
+  margin: 0 10px 10px 10px;
+}
+.contact-form label {
+  font-weight: bold;
+}
+.contact-form input {
+  padding: 10px;
+  border: 0;
+  border-top: 2px solid black;
+}
+
+.contact-form label,
+input,
+button,
+textarea {
+  margin-top: 10px;
+}
+/* --- --- X --- X -- Content Right --- --- X --- X -- */
+
+/* Sidebar-right is in Nav.css */
+@media (max-width: 1000px) {
+  .container {
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-areas:
+      "nav nav nav nav"
+      "sidebar-left content-left content-right content-right"
+      "sidebar-left content-left content-right content-right";
+  }
+}
