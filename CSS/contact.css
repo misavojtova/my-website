@@ -1,22 +1,21 @@
 .container {
-  grid-template-columns: 1fr 1fr 2fr 1fr;
+  grid-template-columns: 1fr 3fr 1fr;
   grid-template-rows: 1fr 4fr 4fr;
   grid-template-areas:
-    "nav nav nav sidebar-right"
-    "sidebar-left content-left content-right sidebar-right"
-    "sidebar-left content-left content-right sidebar-right";
+    "nav nav sidebar-right"
+    "sidebar-left content sidebar-right"
+    "sidebar-left content sidebar-right";
 }
 
-/* --- --- --- --- -- Content Left --- --- --- --- -- */
-#content-left {
-  background-color: yellow;
-  grid-area: content-left;
+#content {
+  grid-area: content;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 5px solid;
+  border-right: 5px solid;
 }
-#content-right {
-  background-color: tomato;
-  grid-area: content-right;
-}
-/* --- --- --- --- -- Content Left --- --- --- --- -- */
 
 .profile {
   /* height: 50vh; */
@@ -29,48 +28,86 @@
   object-fit: cover;
 }
 
-/* --- --- X --- X -- Content Left --- --- X --- X -- */
-/* --- --- --- --- -- Content Right --- --- --- --- -- */
-
-#content-right {
-  display: flex;
-  align-items: flex-end;
+/* ----------- Contact Form ------------ */
+form {
+  width: 100%;
 }
-.box {
-  border: solid rgba(0, 0, 0, 0.658) 3px;
-
-  margin-bottom: 20px;
+form .form-group {
+  margin: 30px 0;
 }
-.contact-form {
-  /* display: inline-grid; */
+
+form input {
+  font-size: 15px;
   font-family: "Flamenco", cursive;
-  /* width: 30vw; */
-  margin: 0 10px 10px 10px;
-}
-.contact-form label {
-  font-weight: bold;
-}
-.contact-form input {
-  padding: 10px;
-  border: 0;
-  border-top: 2px solid black;
+
+  padding: 15px 5px;
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid #091921;
+  display: block;
+  transition: all 0.3s;
 }
 
-.contact-form label,
-input,
-button,
-textarea {
-  margin-top: 10px;
+form input:focus,
+textarea:focus {
+  outline: none;
+  border-bottom: solid 3px #cac71fa2;
 }
-/* --- --- X --- X -- Content Right --- --- X --- X -- */
+form textarea:focus {
+  border-right: solid 3px #cac71fa2;
+}
+form textarea {
+  font-size: 15px;
+  font-family: "Flamenco", cursive;
+
+  padding: 15px 5px;
+  width: 100%;
+  height: 100px;
+  border: none;
+  color: inherit;
+  border-right: 3px solid #091921;
+  border-bottom: 3px solid #091921;
+  display: block;
+  transition: all 0.3s;
+}
+
+form label {
+  font-family: "Flamenco", cursive;
+
+  font-size: 15px;
+  font-weight: 700;
+  display: block;
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+form input::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder {
+  color: black;
+}
+
+/* Makes placeholder invisible when focus */
+form input:focus::-webkit-input-placeholder,
+form textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+form input:focus + label,
+form textarea:focus + label {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(5px);
+}
+/* ------X----- Contact Form ------X------ */
 
 /* Sidebar-right is in Nav.css */
 @media (max-width: 1000px) {
+  /* When screen is smaller then 1000 */
   .container {
-    grid-template-columns: 1fr 2fr 2fr 1fr;
     grid-template-areas:
-      "nav nav nav nav"
-      "sidebar-left content-left content-right content-right"
-      "sidebar-left content-left content-right content-right";
+      "nav nav nav"
+      "sidebar-left content content"
+      "sidebar-left content content";
   }
 }

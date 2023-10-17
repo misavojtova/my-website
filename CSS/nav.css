@@ -1,10 +1,8 @@
 /* --- --- --- --- -- Global styles --- --- --- --- -- */
 
-html,
-body {
+* {
   margin: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -18,7 +16,6 @@ ul {
 /* when screen is biggerr then 1000 */
 .container {
   display: grid;
-  height: 100vh;
 }
 
 /* --- --- --- --- -- Navigation --- --- --- --- -- */
@@ -78,17 +75,16 @@ nav .nav-items .nav-link a:hover {
 /* --- --- X --- X -- Navigation --- --- X --- X -- */
 
 #sidebar-left {
-  background-color: pink;
   grid-area: sidebar-left;
 }
 
 #sidebar-right {
   grid-area: sidebar-right;
+  align-self: center;
 }
 
 /* Above 1000 */
 .social-1000 {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
